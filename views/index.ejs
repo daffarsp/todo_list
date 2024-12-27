@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Todo List</title>
+</head>
+<body>
+  <h1>Todo List</h1>
+  <a href="/add">Add Todo</a>
+  <ul>
+    <% todos.forEach(todo => { %>
+      <li>
+        <strong><%= todo.title %></strong>: <%= todo.description %>
+        [<%= todo.completed ? "Completed" : "Pending" %>]
+        <a href="/edit/<%= todo._id %>">Edit</a>
+        <a href="/delete/<%= todo._id %>" onclick="return confirm('Are you sure?')">Delete</a>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
